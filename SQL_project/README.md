@@ -1,5 +1,4 @@
-ฺ## Basic SQL commands
-
+## Basic SQL commands
 Create table and insert data to table
 ```
 -- create example tables
