@@ -1,4 +1,5 @@
-# Basic SQL commands
+# SQL DDL commands
+use the DB browser (SQLite)
 ## create / insert 
 Create table and insert data to table
 ```
@@ -7,7 +8,8 @@ CREATE TABLE employee (
     id INT,
     name TEXT,
     level TEXT,
-    manager_id INT 
+    manager_id INT,
+    PRIMARY KEY (id)
 );
 
 INSERT INTO employee VALUES 
@@ -24,7 +26,26 @@ INSERT INTO employee VALUES
 
 SELECT * FROM employee;
 ```
-![image](https://user-images.githubusercontent.com/85028821/206661241-b220f76d-e555-4746-a603-2a6f943f39c1.png)
+![image](https://user-images.githubusercontent.com/85028821/206665150-49e260a2-8aa0-4e6b-98a3-df27f66fa191.png)
+
+## update
+```
+UPDATE employee
+SET name == 'Johnathan'
+WHERE id == 1 ;
+
+select * from employee; 
+```
+## add column
+```
+ALTER TABLE employee ADD address ; 
+```
+## delete table
+```
+DELETE FROM employee ;
+```
+# SQL DML commands
+
 
 Join table by itself : I need to join id and manager_id in the same table
 ```
