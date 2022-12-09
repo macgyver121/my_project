@@ -1,6 +1,6 @@
 # Basic commands in SQL
 use the DB browser (SQLite)
-## create / insert 
+## Create / Insert 
 Create table and insert data to table
 ```
 -- create example tables
@@ -28,7 +28,7 @@ SELECT * FROM employee;
 ```
 ![image](https://user-images.githubusercontent.com/85028821/206665150-49e260a2-8aa0-4e6b-98a3-df27f66fa191.png)
 
-## update
+## Update
 ```
 UPDATE employee
 SET name == 'Johnathan'
@@ -36,11 +36,11 @@ WHERE id == 1 ;
 
 select * from employee; 
 ```
-## add column
+## Add column
 ```
 ALTER TABLE employee ADD address ; 
 ```
-## delete table
+## Delete table
 ```
 DELETE FROM employee ;
 ```
@@ -48,7 +48,7 @@ DELETE FROM employee ;
 
 **use chinook.db for the database**
 
-## select
+## Select
 ```
 -- select columns from table
 SELECT
@@ -58,7 +58,7 @@ SELECT
 FROM customers;
 ```
 
-## transform column
+## Transform column
 Create the new column by the existing column
 ```
 -- create/ transform columns
@@ -71,7 +71,7 @@ FROM customers;
 ```
 ![image](https://user-images.githubusercontent.com/85028821/206670132-d32c2c54-bb2a-4a5b-9f73-e3efa241010e.png)
 
-## case when
+## Case when
 Create the new column with the condition from existing column
 ```
 -- CASE is like IF-ELSE in Google Sheets
