@@ -59,7 +59,7 @@ FROM customers;
 ```
 
 ## transform column
-create the new column by the exist column
+create the new column by the existing column
 ```
 -- create/ transform columns
 SELECT
