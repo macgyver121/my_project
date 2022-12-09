@@ -1,4 +1,4 @@
-# SQL DDL commands
+# Basic commands in SQL
 use the DB browser (SQLite)
 ## create / insert 
 Create table and insert data to table
@@ -44,19 +44,10 @@ ALTER TABLE employee ADD address ;
 ```
 DELETE FROM employee ;
 ```
-# SQL DML commands
+# Query commands for SQL
+
+**use chinook.db for the database
+
+## transform column
 
 
-Join table by itself : I need to join id and manager_id in the same table
-```
--- self join
-SELECT 
-	t1.id, 
-    t1.name AS employeeName, 
-    t1.level AS employeeLevel,
-    t2.name AS managerName,
-    t2.level AS managerLevel
-FROM employee t1, employee t2
-WHERE t1.manager_id = t2.id;
-```
-![image](https://user-images.githubusercontent.com/85028821/206661673-f3602345-2c6f-47aa-b25d-a8c8e56f663f.png)
