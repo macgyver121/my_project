@@ -46,8 +46,30 @@ DELETE FROM employee ;
 ```
 # Query commands for SQL
 
-**use chinook.db for the database
+**use chinook.db for the database**
+
+## select
+```
+-- select columns from table
+SELECT
+	firstname,
+	lastname,
+	country
+FROM customers;
+```
 
 ## transform column
+```
+-- create/ transform columns
+SELECT
+	firstname,
+	lastname,
+	firstname || ' ' || lastname AS fullname,
+	LOWER(firstname) || '@company.com' AS email
+FROM customers;
+```
+![image](https://user-images.githubusercontent.com/85028821/206670132-d32c2c54-bb2a-4a5b-9f73-e3efa241010e.png)
+
+
 
 
