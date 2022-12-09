@@ -100,5 +100,44 @@ WHERE YEAR = 2010 ;
 ```
 ![image](https://user-images.githubusercontent.com/85028821/206673513-bcbccc56-886a-4b61-a8a6-cc9d6c33e659.png)
 
+## Join
+Join artists and albums table with Artist id
+```
+SELECT 
+	A.ArtistId,
+	A.name,
+	B.Title
+FROM artists AS A
+JOIN albums AS B
+ON A.ArtistId = B.ArtistId
+```
+![image](https://user-images.githubusercontent.com/85028821/206712674-d29e6c04-7685-427f-b78c-8c7dfdaeca10.png)
 
+## Join 3 tables and Filter
+Join the artists, albums and tracks table with artist id and album id then filter for only the name is Aerosmith
+```
+-- Example Join in the video
+SELECT
+	art.artistid,
+	art.name,
+	alb.title,
+	tra.name,
+	tra.composer
+FROM artists AS art
+JOIN albums  AS alb 
+	ON art.artistid = alb.artistid 
+JOIN tracks  AS tra
+  	ON tra.albumid = alb.albumid
+-- WHERE is used after JOINs completed
+WHERE art.name = 'Aerosmith';
+```
+![image](https://user-images.githubusercontent.com/85028821/206713558-3749dd51-07a0-49be-98b5-98ba325346c5.png)
 
+## Random and Limit
+Random the song's name from tracks table only 10 name
+```
+SELECT name FROM tracks
+ORDER BY RANDOM() DESC
+LIMIT 10 ;
+```
+![image](https://user-images.githubusercontent.com/85028821/206714101-a89f6171-4f0b-4ae6-943c-520f943eef9b.png)
