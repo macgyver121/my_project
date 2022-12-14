@@ -141,3 +141,32 @@ ORDER BY RANDOM() DESC
 LIMIT 10 ;
 ```
 ![image](https://user-images.githubusercontent.com/85028821/206714101-a89f6171-4f0b-4ae6-943c-520f943eef9b.png)
+
+## Filter (with AND, OR, NOT)
+Filter data from country column
+```
+-- filter data that country is USA
+SELECT * FROM customers
+WHERE country = 'USA';
+
+-- filter data that country is USA and state is CA
+SELECT * FROM customers
+WHERE country = 'USA' AND state = 'CA';
+
+-- filter data that country is USA or Canada
+SELECT * FROM customers
+WHERE country = 'USA' OR lower(country) = 'canada';
+
+-- that country is not USA or Canada
+SELECT * FROM customers 
+WHERE NOT (country = 'USA' OR country = 'Canada');
+```
+
+## Filter (with IN, BETWEEN)
+```
+SELECT * FROM customers
+WHERE country IN ('USA', 'Canada', 'Belgium');
+
+SELECT * FROM customers
+WHERE country NOT IN ('USA', 'Canada', 'Belgium');
+```
