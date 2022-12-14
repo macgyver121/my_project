@@ -221,3 +221,50 @@ WHERE firstname LIKE 'J_hn';
 ![image](https://user-images.githubusercontent.com/85028821/207497603-5cbd8e15-6374-4faf-bf1d-aa36c47f5b18.png)
 
 ## Coalesce 
+Use coalesce to replace NULL value with desired value
+```
+-- replace NULL value with 'End Customer'
+SELECT 
+  company,
+  COALESCE(company, 'End Customer') AS cleanCompany
+FROM customers;
+```
+alternative method - can use case when to replace NULL with desired value
+```
+SELECT 
+  CustomerId, 
+  company,
+  CASE WHEN company IS NULL THEN 'End Customer'
+       ELSE 'Corporate'
+  END AS segment
+FROM customers;
+```
+![image](https://user-images.githubusercontent.com/85028821/207645184-7d145765-a0a3-4dab-93f7-55e5cbd3013a.png)
+
+## Join tables (with WHERE)
+Join two tables with WHERE and filter artistid is 8, 100, 120
+```
+SELECT
+  artists.artistid,
+  artists.name AS artist_name,
+  albums.title AS album_name
+FROM artists, albums
+WHERE artists.artistid = albums.artistid -- PK = FK
+  AND artists.artistid IN (8, 100, 120);
+```
+
+Join three tables with WHERE and filter artistid is 8, 100, 120
+```
+SELECT
+  artists.artistid,
+  artists.name AS artist_name,
+  albums.title AS album_name,
+  tracks.name  AS song_name
+FROM artists, albums, tracks  
+WHERE artists.artistid = albums.artistid -- PK = FK
+  AND albums.albumid = tracks.albumid
+  AND artists.artistid IN (8, 100, 120);
+```
+![image](https://user-images.githubusercontent.com/85028821/207646523-dcb459c1-7985-48b9-abb6-c3c401a86076.png)
+
+## Aggregate Functions
