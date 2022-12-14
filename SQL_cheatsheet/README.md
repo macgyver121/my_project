@@ -220,3 +220,4 @@ WHERE firstname LIKE 'J_hn';
 ```
 ![image](https://user-images.githubusercontent.com/85028821/207497603-5cbd8e15-6374-4faf-bf1d-aa36c47f5b18.png)
 
+## Coalesce 
