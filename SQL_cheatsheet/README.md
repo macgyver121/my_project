@@ -194,8 +194,11 @@ WHERE invoicedate BETWEEN '2009-01-01 00:00:00' AND '2009-01-31 20:00:00';
 
 ## Filter matching (with LIKE)
 **%** matches any number of characters (0 or more)
+
 **_** matches single character
+
 **LIKE** case sensitive matches
+
 ```
 -- filter email column that contains @gmail.com at rear
 SELECT * FROM customers
