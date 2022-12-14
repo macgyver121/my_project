@@ -327,7 +327,7 @@ ORDER BY COUNT(*) DESC LIMIT 5; -- desc = descending order
 ```
 ![image](https://user-images.githubusercontent.com/85028821/207655471-474ba0b7-29a7-49d2-bfa6-cf52b9d771fa.png)
 
-## Join table (by on vs where)
+## Join table (on vs where)
 ```
 -- join table (join on)
 SELECT *
@@ -339,3 +339,12 @@ SELECT *
 from genres, tracks
 WHERE genres.genreid = tracks.genreid ;
 ```
+
+## SUBSTR
+Use for bring the string at location n to m from the column
+```
+SELECT firstname, substr(firstname, 2, 3)
+FROM customers
+```
+![image](https://user-images.githubusercontent.com/85028821/207656543-51d803bb-dc71-45ee-a542-c119c2a21858.png)
+
