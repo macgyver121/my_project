@@ -302,7 +302,7 @@ GROUP BY genres.name;
 ## Having
 Filter data after use group by
 ```
--- Filter only genre that have number of tracks more than 100
+-- Filter only genre that have number of tracks more than 100 and genre is not Rock 
 SELECT 
     genres.name, 
     COUNT(*) AS count_songs 
@@ -326,3 +326,16 @@ GROUP BY genres.name
 ORDER BY COUNT(*) DESC LIMIT 5; -- desc = descending order
 ```
 ![image](https://user-images.githubusercontent.com/85028821/207655471-474ba0b7-29a7-49d2-bfa6-cf52b9d771fa.png)
+
+## Join table (by on vs where)
+```
+-- join table (join on)
+SELECT *
+from genres join tracks
+on genres.genreid = tracks.genreid ;
+
+-- join table (where)
+SELECT *
+from genres, tracks
+WHERE genres.genreid = tracks.genreid ;
+```
