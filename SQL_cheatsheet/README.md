@@ -170,3 +170,50 @@ WHERE country IN ('USA', 'Canada', 'Belgium');
 SELECT * FROM customers
 WHERE country NOT IN ('USA', 'Canada', 'Belgium');
 ```
+![image](https://user-images.githubusercontent.com/85028821/207495770-02ddd535-406a-408a-ab31-b30fa3018c8c.png)
+
+Select data only customerID 5-10
+```
+-- BETWEEN AND
+SELECT * FROM customers
+WHERE customerID BETWEEN 5 AND 10; -- inclusive
+
+SELECT * FROM customers 
+WHERE customerID >= 5 AND customerID <= 10;
+```
+![image](https://user-images.githubusercontent.com/85028821/207495930-42faace2-737c-457a-94eb-34e853bf2762.png)
+
+Select data that have invoicedate between '2009-01-01 00:00:00' and '2009-01-31 20:00:00'
+```
+-- BETWEEN AND with DATE TIME column
+SELECT * FROM invoices
+WHERE invoicedate BETWEEN '2009-01-01 00:00:00' AND '2009-01-31 20:00:00';
+```
+![image](https://user-images.githubusercontent.com/85028821/207496146-3b9a4b8d-a685-451e-bd74-11758d0e29b9.png)
+
+
+## Filter matching (with LIKE)
+**%** matches any number of characters (0 or more)
+**_** matches single character
+**LIKE** case sensitive matches
+```
+-- filter email column that contains @gmail.com at rear
+SELECT * FROM customers
+WHERE email LIKE '%@gmail.com'
+
+-- filter email column that does not contain @gmail.com at rear
+SELECT * FROM customers
+WHERE email NOT LIKE '%@gmail.com'
+```
+![image](https://user-images.githubusercontent.com/85028821/207497470-89251b29-ae9f-486a-8c47-593a477b899c.png)
+```
+-- find customers with phone number include 99
+SELECT * FROM customers
+WHERE phone LIKE '%99%';
+
+-- find customers firstname like 'John'
+SELECT * FROM customers
+WHERE firstname LIKE 'J_hn';
+```
+![image](https://user-images.githubusercontent.com/85028821/207497603-5cbd8e15-6374-4faf-bf1d-aa36c47f5b18.png)
+
