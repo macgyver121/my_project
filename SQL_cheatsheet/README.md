@@ -268,3 +268,61 @@ WHERE artists.artistid = albums.artistid -- PK = FK
 ![image](https://user-images.githubusercontent.com/85028821/207646523-dcb459c1-7985-48b9-abb6-c3c401a86076.png)
 
 ## Aggregate Functions
+Find average, summary, minimun, maximum, count of miliseconds columns from tracks table
+
+Use round to prescribe 2 decimal numbers
+```
+SELECT
+  ROUND(AVG(milliseconds), 2) AS avg_mill,
+  SUM(milliseconds)           AS sum_mill,
+  MIN(milliseconds)           AS min_mill,
+  MAX(milliseconds)           AS max_mill,
+  COUNT(milliseconds)         AS count_mill
+FROM tracks;
+```
+![image](https://user-images.githubusercontent.com/85028821/207652147-b6da761f-3da6-4ca0-9352-c7aa148d4d22.png)
+
+## Count Distinct
+count distinct country
+```
+SELECT COUNT(DISTINCT country), COUNT(*) FROM customers;
+```
+![image](https://user-images.githubusercontent.com/85028821/207653387-57b57d87-3f99-4a9c-a3f5-d9b3a236ae4f.png)
+
+## Group By
+Count the number of track by genre
+```
+SELECT genres.name, COUNT(*) AS count_songs 
+FROM genres, tracks 
+WHERE genres.genreid = tracks.genreid
+GROUP BY genres.name;
+```
+![image](https://user-images.githubusercontent.com/85028821/207654535-ed1eb9b6-9b9e-40ee-99d0-32ed2b252c42.png)
+
+## Having
+Filter data after use group by
+```
+-- Filter only genre that have number of tracks more than 100
+SELECT 
+    genres.name, 
+    COUNT(*) AS count_songs 
+FROM genres, tracks 
+WHERE genres.genreid = tracks.genreid AND genres.name <> 'Rock'
+GROUP BY genres.name
+HAVING COUNT(*) >= 100 ;
+```
+![image](https://user-images.githubusercontent.com/85028821/207655058-8b690a58-9f1e-41eb-b22e-a265d39d004f.png)
+
+## Order By
+Use for order the data
+```
+-- Order By + Limit only 5 
+SELECT 
+    genres.name, 
+    COUNT(*) 
+FROM genres 
+JOIN tracks ON genres.genreid = tracks.genreid
+GROUP BY genres.name
+ORDER BY COUNT(*) DESC LIMIT 5; -- desc = descending order
+```
+![image](https://user-images.githubusercontent.com/85028821/207655471-474ba0b7-29a7-49d2-bfa6-cf52b9d771fa.png)
