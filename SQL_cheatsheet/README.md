@@ -363,6 +363,7 @@ AND A.name LIKE 'C%' ;
 ![image](https://user-images.githubusercontent.com/85028821/211560027-f16752ec-31e3-42c8-9e99-25e6daa05f1a.png)
 
 ## Join tale with Count
+** Join or Inner join is default join for SQL "most popular join in Data analyst" but right join and full outer join does not have in SQLite
 Join table with inner join and count Aerosmith's song
 ```
 -- find Aerosmith, note that AS is optional clause
@@ -401,3 +402,45 @@ GROUP BY 1
 ORDER BY 2 DESC;
 ```
 ![image](https://user-images.githubusercontent.com/85028821/211562021-2e873091-abd2-4386-8007-703fc1187b95.png)
+
+## Left Join vs. Inner Join
+Create new Table (book_shop and favourite book)
+```
+-- create two tables
+CREATE TABLE book_shop (
+	id INT,
+  name TEXT,
+  release_year INT
+);
+  
+CREATE TABLE favourite_book (
+  id INT, 
+  author TEXT,
+  reviews REAL
+);
+
+INSERT INTO book_shop VALUES
+  (1, 'Think Like A Freak', 2014),
+  (2, 'Ultralearning', 2019),
+  (3, 'Blue Ocean Strategy', 2015),
+  (4, 'The Power of Habit', 2012),
+  (5, 'Outliers', 2008);
+
+INSERT INTO favourite_book VALUES
+  (1, 'Steven D. Levitt, Stephen J. Dubner', 1904),
+  (4, 'Charles Duhigg', 12007),
+  (5, 'Malcolm Gladwell', 12063);
+```
+```
+-- inner join
+SELECT * FROM book_shop A
+INNER JOIN favourite_book B ON A.id = B.id; 
+```
+![image](https://user-images.githubusercontent.com/85028821/211564924-802e6200-38a9-4da9-b2b4-eb3d09b4ebd3.png)
+
+```
+-- left join
+SELECT * FROM book_shop A
+LEFT JOIN favourite_book B ON A.id = B.id;
+```
+![image](https://user-images.githubusercontent.com/85028821/211565054-c8fb3607-260d-466a-a13c-727256a37179.png)
