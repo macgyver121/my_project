@@ -527,3 +527,42 @@ EXCEPT
 SELECT id FROM favourite_book;
 ```
 Output is ID 2,3
+
+## Union & Union All
+```
+-- create a new book shop table
+CREATE TABLE book_shop_new (
+  	id INT,
+  	name TEXT,
+	 	release_year INT
+  );
+
+INSERT INTO book_shop_new VALUES
+  (6, 'Business Data Science', 2020),
+  (7, 'Subliminal', 2018),
+  (8, 'Good Strategy Bad Strategy', 2015);
+```
+```
+-- union old and new book shop then sorted by year
+SELECT * FROM book_shop
+UNION ALL
+SELECT * FROM book_shop_new
+ORDER BY 3 DESC;
+```
+![image](https://user-images.githubusercontent.com/85028821/211569121-526f8a3d-f568-4759-8fd6-f55aed3cce3c.png)
+
+## Basic Subqueries
+Subqueries are a technique for writing nested queries.
+```
+-- basic subqueries in WHERE clause
+SELECT * FROM tracks 
+WHERE milliseconds = (SELECT max(milliseconds) FROM tracks);
+```
+![image](https://user-images.githubusercontent.com/85028821/211570758-15eb8099-84ef-4ba0-a86b-ecd32ac0395e.png)
+```
+SELECT firstname, lastname, email
+FROM (
+		SELECT * FROM customers WHERE country = 'USA'
+);
+```
+![image](https://user-images.githubusercontent.com/85028821/211571076-4062506d-3da9-44b7-a610-895d78aea69c.png)
