@@ -361,3 +361,28 @@ WHERE A.artistid = B.artistid
 AND A.name LIKE 'C%' ;
 ```
 ![image](https://user-images.githubusercontent.com/85028821/211560027-f16752ec-31e3-42c8-9e99-25e6daa05f1a.png)
+
+## Join 3 table and Count
+Join table with inner join and count Aerosmith's song
+```
+-- find Aerosmith, note that AS is optional clause
+SELECT 
+		A.artistid,
+		A.Name  AS artistName,
+		B.Title AS albumName,
+		C.Name  AS trackName
+FROM artists A
+INNER JOIN albums B ON A.ArtistId = B.ArtistId
+INNER JOIN tracks C ON B.AlbumId = C.AlbumId
+WHERE A.Name = 'Aerosmith';
+```
+![image](https://user-images.githubusercontent.com/85028821/211560712-869feb30-0220-421e-9fd1-658a28d90e34.png)
+
+```
+SELECT 
+	count(*) Aerosmith_Songs
+FROM artists A
+INNER JOIN albums B ON A.ArtistId = B.ArtistId
+INNER JOIN tracks C ON B.AlbumId = C.AlbumId
+WHERE A.Name = 'Aerosmith';
+```
