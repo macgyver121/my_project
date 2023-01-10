@@ -362,7 +362,7 @@ AND A.name LIKE 'C%' ;
 ```
 ![image](https://user-images.githubusercontent.com/85028821/211560027-f16752ec-31e3-42c8-9e99-25e6daa05f1a.png)
 
-## Join 3 table and Count
+## Join tale with Count
 Join table with inner join and count Aerosmith's song
 ```
 -- find Aerosmith, note that AS is optional clause
@@ -386,3 +386,18 @@ INNER JOIN albums B ON A.ArtistId = B.ArtistId
 INNER JOIN tracks C ON B.AlbumId = C.AlbumId
 WHERE A.Name = 'Aerosmith';
 ```
+Group by country with count distinct customers, transaction and sum revenue
+```
+-- a little advanced query, try to read and interpret the result
+SELECT 
+    customers.country, 
+    COUNT(DISTINCT customers.customerid) AS n_customers,
+    COUNT(invoices.total) AS n_transactions,
+    SUM(invoices.total)   AS total_revenue
+FROM customers  
+JOIN invoices 
+ON customers.customerid = invoices.customerid 
+GROUP BY 1 
+ORDER BY 2 DESC;
+```
+![image](https://user-images.githubusercontent.com/85028821/211562021-2e873091-abd2-4386-8007-703fc1187b95.png)
