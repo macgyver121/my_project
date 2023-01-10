@@ -348,3 +348,16 @@ FROM customers
 ```
 ![image](https://user-images.githubusercontent.com/85028821/207656543-51d803bb-dc71-45ee-a542-c119c2a21858.png)
 
+## Select Data From Multiple Tables with alias and LIKE
+Join table with where and LIKE to filter data
+```
+-- using alias to join table and LIKE
+SELECT 
+	A.ArtistId,
+	A.name,
+	B.Title
+FROM artists A, albums B
+WHERE A.artistid = B.artistid
+AND A.name LIKE 'C%' ;
+```
+![image](https://user-images.githubusercontent.com/85028821/211560027-f16752ec-31e3-42c8-9e99-25e6daa05f1a.png)
