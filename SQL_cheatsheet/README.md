@@ -444,3 +444,86 @@ SELECT * FROM book_shop A
 LEFT JOIN favourite_book B ON A.id = B.id;
 ```
 ![image](https://user-images.githubusercontent.com/85028821/211565054-c8fb3607-260d-466a-a13c-727256a37179.png)
+
+## Cross Join
+Create new tables (ranks and suits)
+```
+-- create two tables: ranks and suits
+-- reference: https://www.sqlitetutorial.net/sqlite-cross-join/
+CREATE TABLE ranks (
+    rank TEXT NOT NULL
+);
+
+CREATE TABLE suits (
+    suit TEXT NOT NULL
+);
+
+INSERT INTO ranks(rank) 
+VALUES('2'),('3'),('4'),('5'),('6'),('7'),('8'),('9'),('10'),('J'),('Q'),('K'),('A');
+
+INSERT INTO suits(suit) 
+VALUES('Clubs'),('Diamonds'),('Hearts'),('Spades');
+```
+```
+-- cross join both tables to create a full card deck
+SELECT * FROM ranks 
+CROSS JOIN suits ORDER BY suit;
+```
+The answer will come out 7*5 = 35 row
+
+## Self Join
+Create new table
+```
+-- create a new employee table
+CREATE TABLE employee (
+    id INT,
+    name TEXT,
+    level TEXT,
+    manager_id INT 
+);
+
+INSERT INTO employee VALUES 
+    (1, 'David', 'CEO', NULL),
+    (2, 'John', 'SVP', 1),
+    (3, 'Mary', 'VP', 2),
+    (4, 'Adam', 'VP', 2),
+    (5, 'Scott', 'Manager', 3),
+    (6, 'Louise', 'Manager', 3),
+    (7, 'Kevin', 'Manager', 4),
+    (8, 'Takeshi', 'Manager', 4),
+    (9, 'Joe', 'AM', 6),
+    (10, 'Anna', 'AM', 7);
+```
+Self join : the principle is to name tables differently 
+```
+-- self join in action and create new column
+SELECT 
+    t1.id, 
+    t1.name AS employeeName, 
+    t1.level AS employeeLevel,
+    t2.name AS managerName,
+    t2.level AS managerLevel,
+    t1.name || ' report to ' || t2.name AS comment
+FROM employee t1, employee t2
+WHERE t1.manager_id = t2.id;
+```
+![image](https://user-images.githubusercontent.com/85028821/211567280-46caeb78-cc9b-4e1e-b819-263392df1995.png)
+
+## Intersect & Except
+INTERSECT returns only the distinct rows contained in the two tables. Its use is similar to INNER JOIN.
+```
+-- intersect = which books are in both tables
+SELECT id FROM book_shop
+INTERSECT
+SELECT id FROM favourite_book;
+```
+Output is ID 1,4,5
+
+EXCEPT returns only the distinct rows in the left table that are not in the right table.
+```
+-- except = which books are in the left table, but not in the right tables
+SELECT id FROM book_shop
+EXCEPT
+SELECT id FROM favourite_book;
+```
+Output is ID 2,3
