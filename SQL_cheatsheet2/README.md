@@ -80,8 +80,65 @@ join genres D USING(genreid) ;
 ```
 ![image](https://user-images.githubusercontent.com/85028821/212548966-1474591e-3f59-4ff1-968d-af6d6c10ef07.png)
 
+## Subqueries
+subqueries and select unique artistname that 1st character is L
+```
+SELECT DISTINCT artistName from (
+  SELECT
+      A.artistid,
+      A.name AS artistName,
+      B.title AS albumName,
+      C.name AS trackName,
+      D.name AS genrename
+  from artists A
+  join albums B USING(artistid)
+  join tracks C using(albumid)
+  join genres D using(genreid)
+  WHERE A.name LIKE 'L%' 
+) ;
+```
 
+## Filter NULL
+filter all row that is not NULL in company column
+```
+SELECT * from customers
+where company IS NOT NULL ; -- or use IS NULL
+```
 
+use COALESCE to replace NULL with desired word
+```
+SELECT 
+  company, 
+  COALESCE(company, 'End Customers') AS clean_company
+from customers
+```
+![image](https://user-images.githubusercontent.com/85028821/212551183-07738594-a14a-4a51-8cb6-4ae927c87ba3.png)
 
+## If else using CASE WHEN
+COALESCE and CASE WHEN
+```
+SELECT 
+  company, 
+  COALESCE(company, 'End Customers') AS clean_company,
+  CASE 
+    	WHEN company is NULL then 'End Customers'
+    	ELSE  'Corporate'
+  END AS 'CASE WHEN'
+from customers; 
+```
+![image](https://user-images.githubusercontent.com/85028821/212552100-f34e2226-9a75-4d74-8fd9-b22f99bcbc21.png)
 
+CASE WHEN > 1 conditions
+```
+SELECT 
+  firstname,
+  email,
+    CASE
+      WHEN email like '%@gmail%' THEN 'Google Account'
+      WHEN email like '%@yahoo%' THEN 'Yahoo Account'
+      ELSE 'Other Email Providers'
+    END 'Email_Group'
+FROM customers;
+```
+![image](https://user-images.githubusercontent.com/85028821/212552191-5a2d0242-038e-44ea-9032-4e2c4109bbd8.png)
 
