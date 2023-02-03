@@ -1,5 +1,5 @@
 # Regression
-## Linear Regression (simple)
+## 1.Linear Regression (simple)
 
 **Objective**: Find the best target function 
 
@@ -30,7 +30,7 @@ x_n = np.array([[7, 10]]).T
 y_p = lin_reg.predict(x_n)
 print(y_p)
 ```
-## Linear Regression (multiple)
+## 2.Linear Regression (multiple)
 
 **Objective**: Find the best target function 
 
@@ -93,7 +93,7 @@ print(result)
 ```
 ![image](https://user-images.githubusercontent.com/85028821/216637476-530f3ad3-d8bc-4232-ab8c-a045614e434e.png)
 
-## Polynomial Regression
+## 3.Polynomial Regression
 
 h(x) = θ<sub>0</sub> + θ<sub>1</sub>x + θ<sub>2</sub>x<sup>2</sup>
 
@@ -119,3 +119,6 @@ plt.ylabel('Salary')
 plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/85028821/216638017-16fe03be-be95-4e6b-b1f7-50aa60ee0874.png)
+
+# Classification
+## 1.Logistic Regression
