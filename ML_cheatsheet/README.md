@@ -30,3 +30,8 @@ x_n = np.array([[7, 10]]).T
 y_p = lin_reg.predict(x_n)
 print(y_p)
 ```
+## Linear Regression (multiple)
+
+**Objective**: Find the best target function 
+
+h(x) = θ<sub>0</sub> + θ<sub>1</sub>x + ... + θ<sub>n</sub>x<sub>n</sub>
