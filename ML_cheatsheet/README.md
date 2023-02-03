@@ -93,6 +93,28 @@ print(result)
 ```
 ![image](https://user-images.githubusercontent.com/85028821/216637476-530f3ad3-d8bc-4232-ab8c-a045614e434e.png)
 
-## Polynimial Regression
+## Polynomial Regression
 
 h(x) = θ<sub>0</sub> + θ<sub>1</sub>x + θ<sub>2</sub>x<sup>2</sup>
+
+```
+# Fitting Polynomial Regression to the dataset
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree=2)
+X_poly = poly_reg.fit_transform(X_train)
+pol_reg = LinearRegression()
+pol_reg.fit(X_poly, y_train)
+
+# Visualizing the Polymonial Regression results
+#print(np.sort(X_train,axis=None))
+test = pol_reg.predict(poly_reg.fit_transform(X_train))
+#print(np.sort(test,axis=None))
+plt.scatter(X_train, y_train, color='red')
+plt.scatter(X_test, y_test, color='yellow')
+plt.plot(np.sort(X_train,axis=None), np.sort(test,axis=None), color='blue')
+plt.title('Truth or Bluff (Linear Regression)')
+plt.xlabel('Position level')
+plt.ylabel('Salary')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/85028821/216638017-16fe03be-be95-4e6b-b1f7-50aa60ee0874.png)
