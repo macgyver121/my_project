@@ -97,6 +97,7 @@ print(result)
 
 h(x) = θ<sub>0</sub> + θ<sub>1</sub>x + θ<sub>2</sub>x<sup>2</sup>
 
+Change to Polynomial Features and use Linear Regression method
 ```
 # Fitting Polynomial Regression to the dataset
 from sklearn.preprocessing import PolynomialFeatures
