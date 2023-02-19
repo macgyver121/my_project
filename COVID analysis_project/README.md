@@ -1,4 +1,4 @@
-# COVID analysis
+# COVID analysis project with python
 
 Data source from https://data.go.th/dataset/covid-19-daily
 
