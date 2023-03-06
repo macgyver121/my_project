@@ -1,6 +1,6 @@
-## Use Financial Sample Excel workbook for Power BI
+### Use Financial Sample Excel workbook for Power BI
 
-## This workbook has a table of sales and profit data sorted by market segment and country.
+### This workbook has a table of sales and profit data sorted by market segment and country.
 
 ![image](https://user-images.githubusercontent.com/85028821/223167034-694709f4-f74d-4dab-b1e9-4a038bdb3ea4.png)
 
