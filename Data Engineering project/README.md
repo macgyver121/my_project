@@ -246,3 +246,7 @@ dt_clean.coalesce(1).write.csv('Cleaned_Data_Single.csv', header = True)
 ```
 
 ## 3. Data storage with GCS
+
+![GCS_pipeline](https://user-images.githubusercontent.com/85028821/225270135-452997e8-5227-4c06-b628-8126fd822e00.png)
+
+Can upload data to Google cloud storage with Cloud Shell or Web UI
