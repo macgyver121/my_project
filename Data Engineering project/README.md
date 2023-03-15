@@ -151,6 +151,25 @@ dt.where(dt.Price >= 1).show()
 # filter with datetime
 dt.where( (dt.timestamp >= '2021-05-01 00:00:00') & (dt.timestamp <= '2021-05-31 23:59:59') ).count()
 ```
-674262
+>> 674262
 
 #### Graphical EDA
+```
+# Spark Dataframe to Pandas Dataframe
+dt_pd = dt.select(['book_id','Price']).toPandas()
+```
+To see distribution of book price
+```
+# Histogram
+sns.histplot(dt_pd['Price'], bins=10)
+```
+![image](https://user-images.githubusercontent.com/85028821/225257373-e36165bb-3d02-48e2-af54-b57d7661c238.png)
+
+To see the price change by book id ?
+```
+# price change by book_id ?
+sns.regplot(dt_pd['book_id'], dt_pd['Price'], line_kws={"color": "red"})
+```
+![image](https://user-images.githubusercontent.com/85028821/225257738-82974386-bc79-491a-bea3-e819dac57c6c.png)
+
+### 2.4 Data Cleansing with Spark
