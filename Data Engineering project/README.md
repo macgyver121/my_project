@@ -363,4 +363,59 @@ dt_clean.printSchema()
 ![image](https://user-images.githubusercontent.com/85028821/225258521-3d89a43f-a83a-4927-a2d8-cecd980f9e50.png)
 
 #### Anomalies Check
+
+This table does not have anomalies so this below code is just example to collect error
+
 ##### Lexcical error
+```
+# if have the lexical error, can change it
+"""
+from pyspark.sql.functions import when
+
+dt_clean_country = dt_clean.withColumn("CountryUpdate", 
+                                       when(dt_clean['Country'] == 'Japane', 'Japan').otherwise(dt_clean['Country'])
+                                       )
+
+dt_clean = dt_clean_country.drop("Country").withColumnRenamed('CountryUpdate', 'Country')
+"""
+```
+##### Integrity constraints
+```
+# if have the Integrity constraints, can change it
+"""
+# check
+dt_correct_userid = dt_clean.filter(dt_clean["user_id"].rlike("^[0-9a-z]{8}$"))
+dt_incorrect_userid = dt_clean.subtract(dt_correct_userid)
+
+dt_incorrect_userid.show(10)
+
+# collect it
+dt_clean_userid = dt_clean.withColumn("user_id_update", 
+                                       when(dt_clean['user_id'] == 'ca86d17200', 'ca86d172').otherwise(dt_clean['user_id'])
+                                       )
+
+dt_clean = dt_clean_userid.drop('user_id').withColumnRenamed('user_id_update', 'user_id')
+"""
+```
+##### Missing values
+```
+# if have missing values
+"""
+dt_clean_userid = dt_clean.withColumn("user_id_update", 
+                                when(dt_clean['user_id'].isNull(), '00000000').otherwise(dt_clean['user_id'])
+                                )
+"""
+```
+##### Outliers
+```
+sns.boxplot(x = dt_pd['Price'])
+```
+![image](https://user-images.githubusercontent.com/85028821/225259675-24ae72b9-05d1-4e0d-9f98-a5596280aa12.png)
+
+After check the book that price is above 80 dollar is a real book so I do not remove that book
+
+##### Save Data to CSV
+```
+# save as single file (single worker)
+dt_clean.coalesce(1).write.csv('Cleaned_Data_Single.csv', header = True)
+```
