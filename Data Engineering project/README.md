@@ -115,8 +115,7 @@ final_df = final_df.drop("date", axis=1)
 
 ![image](https://user-images.githubusercontent.com/85028821/225254539-92737847-b49d-4a68-bacf-2bc8abf62ebd.png)
 
-save to CSV
-
+Save to CSV
 ```
 # TODO: save "to csv" file
 final_df.to_csv('output.csv', index=False)
