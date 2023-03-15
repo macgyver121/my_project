@@ -250,3 +250,10 @@ dt_clean.coalesce(1).write.csv('Cleaned_Data_Single.csv', header = True)
 ![GCS_pipeline](https://user-images.githubusercontent.com/85028821/225270135-452997e8-5227-4c06-b628-8126fd822e00.png)
 
 Can upload data to Google cloud storage with Cloud Shell or Web UI
+
+## 4. Automated Data pipeline with Airflow
+It can use Airflow to do data pipeline orchestration automatically by using DAG file.
+First, collect the data, next join the table, and finally upload to GCS and the data warehouse.
+
+Airflow DAG definition file contains
+1. 
