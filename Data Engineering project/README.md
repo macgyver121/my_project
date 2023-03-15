@@ -164,7 +164,7 @@ sns.histplot(dt_pd['Price'], bins=10)
 ```
 ![image](https://user-images.githubusercontent.com/85028821/225257373-e36165bb-3d02-48e2-af54-b57d7661c238.png)
 
-To see the price change by book id ?
+Does it has correlation between price and book_id?
 ```
 # price change by book_id ?
 sns.regplot(dt_pd['book_id'], dt_pd['Price'], line_kws={"color": "red"})
