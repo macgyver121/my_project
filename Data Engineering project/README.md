@@ -45,7 +45,7 @@ connection = pymysql.connect(host=Config.MYSQL_HOST,
                              charset=Config.MYSQL_CHARSET,
                              cursorclass=pymysql.cursors.DictCursor)
 ```
-create table audible_data and audible_transaction 
+Create table audible_data and audible_transaction 
 ```
 sql = "SELECT * FROM audible_data"
 sql2 = "SELECT * FROM audible_transaction"
@@ -393,22 +393,22 @@ task3 is similar to step1.3 (Join 2 table and wrangling data)
 
 task4 is upload file to data lake (Google cloud storage) and data warehouse (BigQuery)
 
-It's occur automatically by Airflow
+It occurs automatically by Airflow
 
 ![image](https://user-images.githubusercontent.com/85028821/225332817-60ded52c-ebac-471f-a4c0-33db7c7a542a.png)
 
-Finally the audible_data table is in the BigQuery
+Finally, the audible_data table is in the BigQuery
 
 ![image](https://user-images.githubusercontent.com/85028821/225333968-0bf4f3ca-c64f-4989-947c-ed0c859d31df.png)
 
 ## 6. Building dashboard with Looker Studio (Google Data Studio)
 
-Create the report with Data source from BigQuery (It sync the data from previuos step)
+Create the report with Data source from BigQuery (It syncs the data from previous step).
 
-I want to create the report that want to know
-- Which category is best seller?
+I want to create the report that need to know
+- Which category is the best seller?
 - What are the revenue and number of customers in each country?
-- Which book title is best seller?
+- Which book title is the best seller?
 - Table for search book title by revenue and country
 
 ![Screenshot (854)](https://user-images.githubusercontent.com/85028821/225337148-50d70c9f-cc97-4eea-a9a0-c2003834a7c9.png)
