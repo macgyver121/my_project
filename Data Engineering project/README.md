@@ -406,9 +406,9 @@ Finally the audible_data table is in the BigQuery
 Create the report with Data source from BigQuery (It sync the data from previuos step)
 
 I want to create the report that want to know
-- Which category is best seller
-- Revenue and number of customers in each country
-- Which book title is best seller
+- Which category is best seller?
+- What are the revenue and number of customers in each country?
+- Which book title is best seller?
 - Table for search book title by revenue and country
 
 ![Screenshot (854)](https://user-images.githubusercontent.com/85028821/225337148-50d70c9f-cc97-4eea-a9a0-c2003834a7c9.png)
