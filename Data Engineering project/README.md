@@ -244,3 +244,5 @@ After check the book that price is above 80 dollar is a real book so I do not re
 # save as single file (single worker)
 dt_clean.coalesce(1).write.csv('Cleaned_Data_Single.csv', header = True)
 ```
+
+## 3. Data storage with GCS
