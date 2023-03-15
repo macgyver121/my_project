@@ -54,9 +54,11 @@ audible_transaction = pd.read_sql(sql2, connection)
 ```
 
 Table audible_data
+
 ![image](https://user-images.githubusercontent.com/85028821/225204543-28d784f1-7dc9-4dea-bdcd-bcc57150c730.png)
 
 Table audible_transaction
+
 ![image](https://user-images.githubusercontent.com/85028821/225204664-e8bd8fa1-6547-4674-8c7f-e10a5f3df436.png)
 
 Join audible_data and audible_transaction with book_id
