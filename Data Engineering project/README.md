@@ -251,7 +251,8 @@ dt_clean.coalesce(1).write.csv('Cleaned_Data_Single.csv', header = True)
 
 Can upload data to Google cloud storage with Cloud Shell or Web UI
 
-## 4. Automated Data pipeline with Airflow
+## 4. Automated Data pipeline with Airflow + 5. Building Data warehourse with BigQuery
+
 It can use Airflow to do data pipeline orchestration automatically by using DAG file.
 
 First, collect the data, next join the table, and finally upload to GCS and the data warehouse.
@@ -262,6 +263,10 @@ Airflow DAG definition file contains
 - Instantiate a DAG
 - Tasks
 - Setting up Dependencies
+
+First create Dataset in BigQuery
+
+Then, Run this python code by Airflow on Google composer
 
 ```
 from airflow.models import DAG
@@ -389,3 +394,23 @@ task3 is similar to step1.3 (Join 2 table and wrangling data)
 task4 is upload file to data lake (Google cloud storage) and data warehouse (BigQuery)
 
 It's occur automatically by Airflow
+
+![image](https://user-images.githubusercontent.com/85028821/225332817-60ded52c-ebac-471f-a4c0-33db7c7a542a.png)
+
+Finally the audible_data table is in the BigQuery
+
+![image](https://user-images.githubusercontent.com/85028821/225333968-0bf4f3ca-c64f-4989-947c-ed0c859d31df.png)
+
+## 6. Building dashboard with Looker Studio (Google Data Studio)
+
+Create the report with Data source from BigQuery (It sync the data from previuos step)
+
+I want to create the report that want to know
+- Which category is best seller
+- Revenue and number of customers in each country
+- Which book title is best seller
+- Table for search book title by revenue and country
+
+![Screenshot (854)](https://user-images.githubusercontent.com/85028821/225337148-50d70c9f-cc97-4eea-a9a0-c2003834a7c9.png)
+
+![Screenshot (855)](https://user-images.githubusercontent.com/85028821/225337366-3cb58d8d-e516-4961-9edb-ee86c51576d2.png)
