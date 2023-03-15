@@ -257,6 +257,8 @@ It can use Airflow to do data pipeline orchestration automatically by using DAG 
 First, collect the data, next join the table, and finally upload to GCS and the data warehouse.
 
 Airflow DAG definition file contains
-1.
-2.
-3.
+1.Importing Modules
+2.Default Argument (optional)
+3.Instantiate a DAG
+4.Tasks
+5.Setting up Dependencies
