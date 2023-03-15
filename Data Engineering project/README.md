@@ -113,6 +113,8 @@ final_df['THBPrice'] = final_df['Price'] * final_df['conversion_rate']
 final_df = final_df.drop("date", axis=1)
 ```
 
+![image](https://user-images.githubusercontent.com/85028821/225254539-92737847-b49d-4a68-bacf-2bc8abf62ebd.png)
+
 save to CSV
 
 ```
@@ -120,3 +122,35 @@ save to CSV
 final_df.to_csv('output.csv', index=False)
 ```
 
+## 2. Data wrangling with Spark
+### 2.1 Load data to spark
+```
+dt = spark.read.csv('/content/output.csv', header = True, inferSchema = True, )
+```
+### 2.2 Data profiling
+```
+# see data
+dt.show()
+```
+![image](https://user-images.githubusercontent.com/85028821/225256004-22d59cc3-31ba-4f58-a93f-069e9b4e0a9f.png)
+
+```
+# print schema
+dt.printSchema()
+```
+![image](https://user-images.githubusercontent.com/85028821/225256221-b34baab7-7176-4773-8d78-00990af2d496.png)
+
+### 2.3 EDA - Exploratory Data Analysis
+#### Non-Graphical EDA
+```
+# filter data
+dt.where(dt.Price >= 1).show()
+```
+![image](https://user-images.githubusercontent.com/85028821/225256547-1d0dee6b-f6f4-4436-acc5-a8c28c3d1a9e.png)
+```
+# filter with datetime
+dt.where( (dt.timestamp >= '2021-05-01 00:00:00') & (dt.timestamp <= '2021-05-31 23:59:59') ).count()
+```
+674262
+
+#### Graphical EDA
