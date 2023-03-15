@@ -253,7 +253,10 @@ Can upload data to Google cloud storage with Cloud Shell or Web UI
 
 ## 4. Automated Data pipeline with Airflow
 It can use Airflow to do data pipeline orchestration automatically by using DAG file.
+
 First, collect the data, next join the table, and finally upload to GCS and the data warehouse.
 
 Airflow DAG definition file contains
-1. 
+1.
+2.
+3.
