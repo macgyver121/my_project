@@ -1,4 +1,21 @@
+# Financial project By PowerBI
+
 ### Use Financial Sample Excel workbook for Power BI
+
+Dataset consists of 13 columns:
+- Segment
+- Country
+- Product
+- Discount Band
+- Units Sold
+- Manufacturing Price
+- Sale Price
+- Gross Sales - is Units Sold*Sale Price
+- Discounts
+- Sales - is Gross Sales-Discounts
+- COGS - Cost of goods sold
+- Profit - is Sales-COGS
+- Date
 
 ### This workbook has a table of sales and profit data sorted by market segment and country.
 
