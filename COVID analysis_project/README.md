@@ -4,6 +4,19 @@ Data source from https://data.go.th/dataset/covid-19-daily
 
 The patients' data was corrected from January 2020 to March 2022.
 
+Dataset consists of 11 columns:
+- No. - Unique ID
+- announce_date
+- Notified date
+- sex
+- age
+- Unit - year
+- nationality
+- province_of_isolation
+- risk - factor of risk
+- province_of_onset 
+- district_of_onset
+
 The step of this project
 
 ## 1. Data preparation
