@@ -1,5 +1,8 @@
 # Analysis and Visualization the Starbuck dataset using Dash
 
+### Dataset: Starbucks.csv
+Dataset consists of 2000 records and 8 columns:
+
 ## 1. With this graph, users can compare the number of Starbucks stores among Thailand, Vietnam, Singapore, and Malaysia.
 ```
 # Run this app with `python app.py` and
