@@ -1,7 +1,21 @@
 # Analysis and Visualization the Starbuck dataset using Dash
 
 ### Dataset: Starbucks.csv
-Dataset consists of 2000 records and 8 columns:
+Dataset consists of 25601 records and 13 columns:
+- Brand
+- Store Number
+- Store Name
+- Ownership Type
+- Street Address
+- City
+- State/Province
+- Country
+- Postcode
+- Phone Number
+- Timezone
+- Longitude
+- Latitude
+
 
 ## 1. With this graph, users can compare the number of Starbucks stores among Thailand, Vietnam, Singapore, and Malaysia.
 ```
