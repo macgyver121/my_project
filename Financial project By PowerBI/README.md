@@ -2,7 +2,7 @@
 
 ### Use Financial Sample Excel workbook for Power BI
 
-Dataset consists of 13 columns:
+Dataset consists of 700 rows and 13 columns:
 - Segment
 - Country
 - Product
