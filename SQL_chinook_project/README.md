@@ -14,3 +14,6 @@ Dataset: Here is an image that describes the information contained in the databa
 - Question 6: Return all the track names that have a song length longer than the average song length.
 - Question 7: Find all the customers who bought the best-selling singer's songs in descending order of purchase amount.
 
+I use SQL command on IPython Notebook.
+
+You can see all answer in SQL_project.ipynb
