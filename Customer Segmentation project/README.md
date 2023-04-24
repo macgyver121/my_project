@@ -25,10 +25,10 @@ The project consist of flowwing step:
 
 Income vs spending plot shows the clusters pattern
 
-- group 0: low spending & average income
-- group 1: high spending & high income
-- group 2: low spending & low income
-- group 3: high spending & average income
+    - group 0: low spending & average income
+    - group 1: high spending & high income
+    - group 2: low spending & low income
+    - group 3: high spending & average income
 
 - Conclusion
 
