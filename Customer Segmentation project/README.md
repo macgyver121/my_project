@@ -1,8 +1,8 @@
 # Customer Segmentation
 
-This project use the Customer Personality Analysis dataset from kaggle (https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis) to predict the cluster of customers by personality profile.
+This project use the Customer Personality Analysis dataset from kaggle (https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis) to predict the cluster of customers by personality profile. You can see my full work in python notebook file
 
-The project consist of flowwing step:
+The project consist of flowing step:
 
 ## Import Libraries
 ## Import Dataset
