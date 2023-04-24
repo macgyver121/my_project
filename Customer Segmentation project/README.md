@@ -6,6 +6,9 @@ The project consist of flowwing step:
 
 - Import Libraries
 - Import Dataset
+
+![image](https://user-images.githubusercontent.com/85028821/233956793-d0ae4f37-65a9-4450-b04d-2b4607723505.png)
+
 - Data Cleaning
   - Delete NULL
   - Change type from object to datetime
@@ -16,6 +19,11 @@ The project consist of flowwing step:
   - Label encoding the categorical features
   - Scaling the features using the standard scaler
   - Dimensionality reduction using PCA
+
+![image](https://user-images.githubusercontent.com/85028821/233956965-cbdddb6f-d0ed-4502-9680-96da9af1b7ee.png)
+
+From 95% cut-off thrashold, I will use 16 principle components
+
 - Clustering
   - Elbow Method
   - Clustering via K-means
