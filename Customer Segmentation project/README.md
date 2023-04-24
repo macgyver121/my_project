@@ -4,18 +4,18 @@ This project use the Customer Personality Analysis dataset from kaggle (https://
 
 The project consist of flowwing step:
 
-- Import Libraries
-- Import Dataset
+## Import Libraries
+## Import Dataset
 
 ![image](https://user-images.githubusercontent.com/85028821/233956793-d0ae4f37-65a9-4450-b04d-2b4607723505.png)
 
-- Data Cleaning
+## Data Cleaning
   - Delete NULL
   - Change type from object to datetime
   - Create new feature "Customer_For"
-- Feature Engineering
+## Feature Engineering
   - Check and delete outliers in some columns using pairplot
-- Data Preprocessing
+## Data Preprocessing
   - Label encoding the categorical features
   - Scaling the features using the standard scaler
   - Dimensionality reduction using PCA
@@ -24,10 +24,10 @@ The project consist of flowwing step:
 
 From 95% cut-off thrashold, I will use 16 principle components
 
-- Clustering
+## Clustering
   - Elbow Method
   - Clustering via K-means
-- Evaluation
+## Evaluation
 
 ![image](https://user-images.githubusercontent.com/85028821/233956257-b1a6bf1d-cc99-428a-bda1-4f89d2644077.png)
 
@@ -38,6 +38,6 @@ Income vs spending plot shows the clusters pattern
     - group 2: low spending & low income
     - group 3: high spending & average income
 
-- Conclusion
+## Conclusion
 
 In this project, I used unsupervised clustering in this project. I did employ dimensionality reduction, then grouping by aggregation. I created four clusters and utilized them to profile customers in clusters based on their family configurations, income levels, and spending habits. This can be applied while creating more effective marketing plans.
